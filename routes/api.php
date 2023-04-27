@@ -20,3 +20,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/kontak', KontakController::class);
+
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+    Route::post('/registrasi', [\App\Http\Controllers\Auth\RegisterController::class ,'register']);
+    Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class ,'login']);
+    Route::post('/logout', [\App\Http\Controllers\Auth\LoginController::class ,'logout']);
+});

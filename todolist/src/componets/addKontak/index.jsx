@@ -3,14 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { addKontak, getListKontak, updateKontak } from "../../actions/kontakAction";
 
 
-export default function addContak({data}) {
+export default function addContak() {
     const dispatch = useDispatch();
     const [id, setId] = useState('');
     const [name, setName] = useState('');
     const [nomor ,setNomor] = useState('');
     const [provider, setProvider] = useState('');
     const [image , setImage] = useState('')
-    const { addKontakResult, showKontakResult, updateKontakResult } = useSelector((state) => state.KontakReducer);
+    const {
+      addKontakResult,
+      showKontakResult,
+      updateKontakResult,
+    } = useSelector((state) => state.KontakReducer);
+
 
     const handleSubmit = (event) => {
         event.preventDefault();

@@ -1,12 +1,15 @@
-import { AddKontak, ListKontak } from "..";
+import { AddKontak, DeafultLayouts, ListKontak } from "..";
 
 
 export default function appLayout() {
   return (
     <>
-      <AddKontak />
-      <hr />
-      <ListKontak />
+      <div title="appLayout">
+        <DeafultLayouts />
+        <AddKontak />
+        <hr />
+        <ListKontak />
+      </div>
     </>
   );
 }
